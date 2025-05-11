@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silviidwip</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffe6f0;
+      text-align: center;
+      padding: 50px;
+      overflow: hidden;
+      position: relative;
+    }
+    img {
+      border-radius: 20px;
+      width: 300px;
+      height: auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #d63384;
+    }
+    p {
+      color: #555;
+    }
+
+    .love {
+      position: absolute;
+      top: -20px;
+      font-size: 24px;
+      animation: fall linear;
+      color: #ff4da6;
+      user-select: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Sisil</h1>
+  <img src="sisil1.jpg" alt="Sisil">
+  <img src="sisil2.jpg" alt="Sisil">
+  <p> OMAYGAT SISILLLL </p>
+
+  <script>
+    function createLove() {
+      const love = document.createElement('div');
+      love.classList.add('love');
+      love.style.left = Math.random() * 100 + 'vw';
+      love.style.animationDuration = (2 + Math.random() * 3) + 's';
+      love.innerText = '💗';
+      document.body.appendChild(love);
+
+      setTimeout(() => {
+        love.remove();
+      }, 5000);
+    }
+
+    setInterval(createLove, 300);
+  </script>
+</body>
+</html>
